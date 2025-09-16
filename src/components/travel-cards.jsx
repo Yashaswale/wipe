@@ -27,7 +27,7 @@ export function TravelCards() {
                 <img
                   src={bgDesign}
                   alt="decorative"
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-auto z-0 pointer-events-none select-none"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-auto z-0 pointer-events-none select-none"
                 />
                 {/* Hover darken overlay */}
                 <div className="absolute inset-0 z-20 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

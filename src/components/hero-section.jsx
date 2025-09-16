@@ -5,7 +5,7 @@ import { getNames } from 'country-list';
 
 const textVariations = [
   "Seamless Rides, Anytime, Anywhere",
-  "Ride Globally , Arrive in Style",
+  "Ride Globally, Arrive in Style",
   "Wherever You Go, We're Already There."
 ];
 
@@ -90,7 +90,7 @@ const WipeLanding = () => {
       }`}
     >
       <span
-        className={word === "Seamless" || word === "Globally" || word === "Already" ? "text-green-600" : ""}
+        className={word === "Seamless" || word === "Globally," || word === "Already" ? "text-green-600" : ""}
       >
         {word}{" "}
       </span>
@@ -101,7 +101,7 @@ const WipeLanding = () => {
     <div className="min-h-screen" style={{ background: "linear-gradient(to top left, #DBF1E6, white)" }}>
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-80px)]">
         {/* Left Content */}
-        <div className="flex-1 px-6 py-12 md:px-12 lg:pr-8">
+        <div className="flex-1 px-6 py-20 md:px-12 lg:pr-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl text-green-600 font-semibold mb-4" style={{ fontFamily: "Codec Cold Trial, sans-serif" }}>
               Let's Wipe

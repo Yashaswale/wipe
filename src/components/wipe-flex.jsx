@@ -63,9 +63,9 @@ export function WipeFlex() {
                 Available across UAE from Trusted Rental Partners
               </p>
             </div>
-            <button className="bg-green-500 hover:bg-green-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 self-end">
+            <a href="/flex" className="bg-green-500 hover:bg-green-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 self-end">
               Explore Wipe Flex
-            </button>
+            </a>
           </div>
         </div>
 

@@ -4,25 +4,30 @@ import { Menu, X } from "lucide-react";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const goToHomeSection = (hash) => (e) => {
+    e.preventDefault();
+    window.location.href = `/${hash}`; // e.g., '/#why-wipe'
+  };
+
   return (
     <header className="flex items-center justify-between px-6 md:px-12 py-4 bg-gradient-to-r from-white to-green-50 relative shadow-sm">
       {/* Logo */}
-      <div className="text-3xl font-bold text-green-600 font-[Codec Cold Trial,sans-serif]">
+      <a href="/" className="text-3xl font-bold text-green-600 font-[Codec Cold Trial,sans-serif]">
         Wipe
-      </div>
+      </a>
 
       {/* Desktop Navigation (centered) */}
       <nav className="hidden md:flex flex-1 justify-center space-x-10 text-gray-900 font-medium font-[Codec Cold Trial,sans-serif]">
-        <a href="#why-wipe" className="hover:text-green-600 transition-colors">
+        <a href="/#why-wipe" onClick={goToHomeSection('#why-wipe')} className="hover:text-green-600 transition-colors">
           WhyWipe
         </a>
-        <a href="#travel-cards" className="hover:text-green-600 transition-colors">
+        <a href="/#travel-cards" onClick={goToHomeSection('#travel-cards')} className="hover:text-green-600 transition-colors">
           Services
         </a>
-        <a href="#country-cards" className="hover:text-green-600 transition-colors">
+        <a href="/#country-cards" onClick={goToHomeSection('#country-cards')} className="hover:text-green-600 transition-colors">
           Wipe Ride
         </a>
-        <a href="#wipe-flex" className="hover:text-green-600 transition-colors">
+        <a href="/flex" className="hover:text-green-600 transition-colors">
           Wipe Flex
         </a>
       </nav>
@@ -43,28 +48,28 @@ export function Navbar() {
       >
         <nav className="flex flex-col items-center p-6 space-y-6 text-gray-900 font-medium font-[Codec Cold Trial,sans-serif]">
           <a
-            href="#why-wipe"
+            href="/#why-wipe"
             className="hover:text-green-600 transition-colors"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => { goToHomeSection('#why-wipe')(e); setIsOpen(false); }}
           >
             WhyWipe
           </a>
           <a
-            href="#travel-cards"
+            href="/#travel-cards"
             className="hover:text-green-600 transition-colors"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => { goToHomeSection('#travel-cards')(e); setIsOpen(false); }}
           >
             Services
           </a>
           <a
-            href="#country-cards"
+            href="/#country-cards"
             className="hover:text-green-600 transition-colors"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => { goToHomeSection('#country-cards')(e); setIsOpen(false); }}
           >
             Wipe Ride
           </a>
           <a
-            href="#wipe-flex"
+            href="/flex"
             className="hover:text-green-600 transition-colors"
             onClick={() => setIsOpen(false)}
           >

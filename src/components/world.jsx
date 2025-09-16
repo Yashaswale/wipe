@@ -42,9 +42,9 @@ export function World() {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-                <button className="w-48 px-10 py-5 bg-white border-2 border-green-600 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors shadow-lg text-lg">
+                <a href="/flex" className="w-48 px-10 py-5 bg-white border-2 border-green-600 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors shadow-lg text-lg">
                   Wipe Flex
-                </button>
+                </a>
                 <button
                   onClick={() => { window.location.href = 'https://letswipe.mozio.com/en-us/'; }}
                   className="w-48 px-10 py-5 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-lg text-lg"
