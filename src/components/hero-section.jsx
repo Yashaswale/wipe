@@ -10,19 +10,19 @@ const textVariations = [
 ];
 
 const leftColumnImages = [
-  { src: "src/assets/countries/Berlin.png", city: "Berlin" },
-  { src: "src/assets/countries/Paris.png", city: "Paris" },
-  { src: "src/assets/countries/Singapore2.png", city: "Singapore" },
-  { src: "src/assets/countries/NewYork.png", city: "New York" },
-  { src: "src/assets/countries/UAE.png", city: "UAE" }
+  { src: "/assets/countries/Berlin.png", city: "Berlin" },
+  { src: "/assets/countries/Paris.png", city: "Paris" },
+  { src: "/assets/countries/Singapore2.png", city: "Singapore" },
+  { src: "/assets/countries/NewYork.png", city: "New York" },
+  { src: "/assets/countries/UAE.png", city: "UAE" }
 ];
 
 const rightColumnImages = [
-  { src: "src/assets/countries/Tokyo.png", city: "Tokyo" },
-  { src: "src/assets/countries/London.png", city: "London" },
-  { src: "src/assets/countries/Lisbon.png", city: "Lisbon" },
-  { src: "src/assets/countries/Madrid.png", city: "Madrid" },
-  { src: "src/assets/countries/Bankok.png", city: "Bankok" }
+  { src: "/assets/countries/Tokyo.png", city: "Tokyo" },
+  { src: "/assets/countries/London.png", city: "London" },
+  { src: "/assets/countries/Lisbon.png", city: "Lisbon" },
+  { src: "/assets/countries/Madrid.png", city: "Madrid" },
+  { src: "/assets/countries/Bankok.png", city: "Bankok" }
 ];
 
 // Build country options for the autocomplete using full country list

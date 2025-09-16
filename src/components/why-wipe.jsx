@@ -6,7 +6,7 @@ export function WhyWipe() {
           <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 lg:p-12 relative overflow-hidden min-h-[260px] sm:min-h-[300px] lg:min-h-[320px]">
             <div className="absolute inset-0">
               <img 
-                src="src/assets/CO2.png" 
+                src="/assets/CO2.png" 
                 alt="Forest aerial view" 
                 className="w-full h-full object-cover opacity-60"
               />
@@ -100,7 +100,7 @@ export function WhyWipe() {
               {/* Vision Image */}
               <div className="absolute bottom-0 right-0 w-48 h-auto sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 pointer-events-none">
                 <img 
-                  src="/src/assets/Vision.png" 
+                  src="/assets/Vision.png" 
                   alt="Vision" 
                   className="w-full h-full object-contain object-bottom"
                 />

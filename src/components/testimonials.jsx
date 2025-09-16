@@ -14,7 +14,7 @@ export function Testimonials() {
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
                     <img
-                      src="src/assets/testimonials/karl.png"
+                      src="/assets/testimonials/karl.png"
                       alt="Kar S."
                       className="w-full h-full object-cover"
                     />
@@ -33,7 +33,7 @@ export function Testimonials() {
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
                     <img
-                      src="src/assets/testimonials/charles.png"
+                      src="/assets/testimonials/charles.png"
                       alt="Charles J."
                       className="w-full h-full object-cover"
                     />
@@ -52,7 +52,7 @@ export function Testimonials() {
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
                     <img
-                      src="src/assets/testimonials/talvin.png"
+                      src="/assets/testimonials/talvin.png"
                       alt="Talvin D."
                       className="w-full h-full object-cover"
                     />

@@ -19,7 +19,7 @@ export function World() {
                 {/* World Map Background */}
                 <a href="https://letswipe.mozio.com/en-us/" aria-label="Open Wipe Ride booking" className="block">
                   <img
-                    src="/src/assets/World-Map.png"
+                    src="/assets/World-Map.png"
                     alt="World Map"
                     className="w-full h-full object-contain cursor-pointer hover:opacity-95 transition-opacity"
                   />

@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
-import bgDesign from "../assets/bg_design.png";
+import bgDesign from "/assets/bg_design.png";
 
 export function WipeFlex() {
   const { ref, inView } = useInView({
@@ -27,7 +27,7 @@ export function WipeFlex() {
 
           {/* Car Image - extreme left & slightly out of card */}
           <img
-            src="src/assets/BMW.png"
+            src="/assets/BMW.png"
             alt="Green BMW car"
             className="absolute left-0 -bottom-6 w-full max-w-xs sm:max-w-sm lg:max-w-sm object-contain transform -translate-x-6 z-20"
           />

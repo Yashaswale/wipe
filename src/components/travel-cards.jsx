@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
-import bgDesign from '../assets/bg_design.png';
+import bgDesign from '/assets/bg_design.png';
 
 export function TravelCards() {
   const bookingUrl = 'https://letswipe.mozio.com/en-us/';
@@ -57,7 +57,7 @@ export function TravelCards() {
               >
                 <div className="absolute inset-0">
                   <img 
-                    src="src/assets/travel-img/Economy.png" 
+                    src="/assets/travel-img/Economy.png" 
                     alt="City street" 
                     className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                   />
@@ -86,7 +86,7 @@ export function TravelCards() {
               >
                 <div className="absolute inset-0">
                   <img 
-                    src="src/assets/travel-img/Premium.png" 
+                    src="/assets/travel-img/Premium.png" 
                     alt="Luxury car" 
                     className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                   />
@@ -116,7 +116,7 @@ export function TravelCards() {
               className="rounded-2xl h-full relative overflow-hidden group cursor-pointer"
             >
               <img 
-                src="src/assets/travel-img/Center.png" 
+                src="/assets/travel-img/Center.png" 
                 alt="Sports car on bridge" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -138,7 +138,7 @@ export function TravelCards() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
                 <div className="absolute inset-0">
                   <img 
-                    src="src/assets/travel-img/Business.png" 
+                    src="/assets/travel-img/Business.png" 
                     alt="Business person in car" 
                     className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                   />
@@ -167,7 +167,7 @@ export function TravelCards() {
               >
                 <div className="absolute inset-0">
                   <img 
-                    src="src/assets/travel-img/Airport.png" 
+                    src="/assets/travel-img/Airport.png" 
                     alt="Airport transfer" 
                     className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                   />
