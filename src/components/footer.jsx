@@ -62,7 +62,7 @@ const Footer = () => {
             <a href="#country-cards" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 font-medium">
               Wipe Ride
             </a>
-            <a href="#wipe-flex" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 font-medium">
+            <a href="https://www.finalrentals.com/wipe/696bf23197c402c83605b03ffb549e41" className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 font-medium">
               Wipe Flex
             </a>
           </nav>

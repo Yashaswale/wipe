@@ -42,7 +42,7 @@ export function World() {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-                <a href="/flex" className="w-48 px-10 py-5 bg-white border-2 border-green-600 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors shadow-lg text-lg">
+                <a href="https://www.finalrentals.com/wipe/696bf23197c402c83605b03ffb549e41" className="w-48 px-10 py-5 bg-white border-2 border-green-600 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors shadow-lg text-lg">
                   Wipe Flex
                 </a>
                 <button

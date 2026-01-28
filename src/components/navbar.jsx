@@ -1,12 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const goToHomeSection = (hash) => (e) => {
     e.preventDefault();
-    window.location.href = `/${hash}`; // e.g., '/#why-wipe'
+    window.location.href = `/#${hash}`; // e.g., '/#why-wipe'
+  };
+
+  const handleExploreSpace = () => {
+    navigate('/explore-space');
+    setIsOpen(false);
   };
 
   return (
@@ -27,9 +34,12 @@ export function Navbar() {
         <a href="/#country-cards" onClick={goToHomeSection('#country-cards')} className="hover:text-green-600 transition-colors">
           Wipe Ride
         </a>
-        <a href="/flex" className="hover:text-green-600 transition-colors">
+        <a href="https://www.finalrentals.com/wipe/696bf23197c402c83605b03ffb549e41" className="hover:text-green-600 transition-colors">
           Wipe Flex
         </a>
+        <button onClick={handleExploreSpace} className="text-gray-900 font-medium hover:text-green-600 transition-colors">
+          Explore Space
+        </button>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -69,12 +79,18 @@ export function Navbar() {
             Wipe Ride
           </a>
           <a
-            href="/flex"
+            href="https://www.finalrentals.com/wipe/696bf23197c402c83605b03ffb549e41"
             className="hover:text-green-600 transition-colors"
             onClick={() => setIsOpen(false)}
           >
             Wipe Flex
           </a>
+          <button
+            onClick={handleExploreSpace}
+            className="text-gray-900 font-medium hover:text-green-600 transition-colors"
+          >
+            Explore Space
+          </button>
         </nav>
       </div>
     </header>

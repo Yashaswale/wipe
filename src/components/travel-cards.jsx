@@ -1,8 +1,11 @@
 import { ArrowUpRight } from 'lucide-react';
-import bgDesign from '/assets/bg_design.png';
+// Decorative background uses public path to avoid asset hashing during build
+const bgDesign = '/assets/bg_design.png';
 
 export function TravelCards() {
-  const bookingUrl = 'https://letswipe.mozio.com/en-us/';
+  const RidebookingUrl = 'https://letswipe.mozio.com/en-us/';
+  const FlexbookingUrl = 'https://www.finalrentals.com/wipe/696bf23197c402c83605b03ffb549e41';
+
 
   return (
     <div className="min-h-screen bg-white p-4 lg:p-8">
@@ -15,7 +18,7 @@ export function TravelCards() {
             {/* Wipe Ride Offers Card */}
             <div className="flex-1">
               <div
-                onClick={() => { window.location.href = bookingUrl; }}
+                onClick={() => { window.location.href = RidebookingUrl; }}
                 role="link"
                 tabIndex={0}
                 className="rounded-2xl p-6 h-full min-h-[180px] relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
@@ -50,7 +53,7 @@ export function TravelCards() {
             {/* Economy Card */}
             <div className="flex-1">
               <div
-                onClick={() => { window.location.href = bookingUrl; }}
+                onClick={() => { window.location.href = RidebookingUrl; }}
                 role="link"
                 tabIndex={0}
                 className="bg-gray-900 rounded-2xl p-6 h-full min-h-[180px] relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
@@ -79,7 +82,7 @@ export function TravelCards() {
             {/* Premium Card */}
             <div className="flex-1">
               <div
-                onClick={() => { window.location.href = bookingUrl; }}
+                onClick={() => { window.location.href = RidebookingUrl; }}
                 role="link"
                 tabIndex={0}
                 className="bg-gray-900 rounded-2xl p-6 h-full min-h-[180px] relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
@@ -110,7 +113,7 @@ export function TravelCards() {
           {/* Second Column - Large Hero Image */}
           <div className="h-full min-h-[300px] lg:min-h-full">
             <div
-              onClick={() => { window.location.href = bookingUrl; }}
+              onClick={() => { window.location.href = RidebookingUrl; }}
               role="link"
               tabIndex={0}
               className="rounded-2xl h-full relative overflow-hidden group cursor-pointer"
@@ -130,7 +133,7 @@ export function TravelCards() {
             {/* Business Card */}
             <div className="flex-1">
               <div
-                onClick={() => { window.location.href = bookingUrl; }}
+                onClick={() => { window.location.href = RidebookingUrl; }}
                 role="link"
                 tabIndex={0}
                 className="bg-gray-900 rounded-2xl p-6 h-full min-h-[180px] relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
@@ -160,7 +163,7 @@ export function TravelCards() {
             {/* Airport Transfers Card */}
             <div className="flex-1">
               <div
-                onClick={() => { window.location.href = bookingUrl; }}
+                onClick={() => { window.location.href = RidebookingUrl; }}
                 role="link"
                 tabIndex={0}
                 className="bg-gray-900 rounded-2xl p-6 h-full min-h-[180px] relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
@@ -189,7 +192,7 @@ export function TravelCards() {
             {/* Drive or Ride Card */}
             <div className="flex-1">
               <div
-                onClick={() => { window.location.href = bookingUrl; }}
+                onClick={() => { window.location.href = FlexbookingUrl; }}
                 role="link"
                 tabIndex={0}
                 className="rounded-2xl p-6 h-full min-h-[180px] relative overflow-hidden group hover:scale-[1.02] transition-all duration-300 cursor-pointer"
@@ -199,7 +202,7 @@ export function TravelCards() {
               >
                 <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
-                  <h3 className="text-white text-2xl lg:text-3xl font-bold mb-2">Drive or Ride</h3>
+                  <h3 className="text-white text-2xl lg:text-3xl font-bold mb-2">Explore Wipe FLex</h3>
                   <p className="text-white/70 text-base">The power of choice with Wipe</p>
                 </div>
                 <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-white/10 rounded-full"></div>

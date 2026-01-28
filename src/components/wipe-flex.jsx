@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
-import bgDesign from "/assets/bg_design.png";
+const bgDesign = "/assets/bg_design.png";
 
 export function WipeFlex() {
   const { ref, inView } = useInView({
@@ -29,7 +29,7 @@ export function WipeFlex() {
           <img
             src="/assets/BMW.png"
             alt="Green BMW car"
-            className="absolute left-0 -bottom-6 w-full max-w-xs sm:max-w-sm lg:max-w-sm object-contain transform -translate-x-6 z-20"
+            className="absolute left-0 -bottom-6 w-[55%] sm:w-[45%] lg:w-[40%] object-contain transform -translate-x-6 z-20"
           />
 
           {/* Title on top-right */}
@@ -55,15 +55,15 @@ export function WipeFlex() {
               </h3>
               <h2 className="text-white text-4xl lg:text-5xl font-bold mb-2">
                 {inView && (
-                  <CountUp start={0} end={21000} duration={3} separator="," />
+                  <CountUp start={0} end={90000} duration={2} separator="," />
                 )}
                 +
               </h2>
               <p className="text-green-100 text-sm mb-6">
-                Available across UAE from Trusted Rental Partners
+                Available across the Globe from Trusted Rental Partners
               </p>
             </div>
-            <a href="/flex" className="bg-green-500 hover:bg-green-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 self-end">
+            <a href="https://www.finalrentals.com/wipe/696bf23197c402c83605b03ffb549e41" className="bg-green-500 hover:bg-green-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 self-end">
               Explore Wipe Flex
             </a>
           </div>
