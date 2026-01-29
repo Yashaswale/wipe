@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Compass, Rocket, Users, Layers, Download, X } from 'lucide-react';
+import { Rocket, Users, Layers, Download, X, UserRoundPlus } from 'lucide-react';
 
 function ExploreSpace() {
   const [showModal, setShowModal] = useState(false);
@@ -68,12 +68,12 @@ function ExploreSpace() {
         )}
 
         {/* Orbit Nine Section - centered and section-like */}
-        <section className="py-72 md:py-72   px-6">
+        <section className="py-80 md:py-72   px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold tracking-widest text-white mb-4" style={{ fontFamily: 'Codec Cold Trial, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-semibold tracking-widest text-white mb-4" style={{ fontFamily: 'Codec Cold Trial, sans-serif' }}>
               O R B I T&nbsp;&nbsp;&nbsp;N I N E
             </h2>
-            <div className="mt-4">
+            <div className="mt-8">
               <span className="inline-block text-sm sm:text-base md:text-lg font-medium text-white px-4 py-2 bg-white/6 rounded-full backdrop-blur-sm border border-cyan-500/30">
                 Powered by Wipe
               </span>
@@ -102,10 +102,10 @@ function ExploreSpace() {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center pt-6">
-              <button className="group flex items-center gap-2 px-8 py-4 bg-cyan-500/10 border border-cyan-500 rounded-lg hover:bg-cyan-500/20 transition-all duration-300">
+              {/* <button className="group flex items-center gap-2 px-8 py-4 bg-cyan-500/10 border border-cyan-500 rounded-lg hover:bg-cyan-500/20 transition-all duration-300">
                 <Compass className="w-5 h-5" />
                 <span className="font-medium">Explore the Roadmap</span>
-              </button>
+              </button> */}
               <button
                 onClick={() => setShowModal(true)}
                 className="group flex items-center gap-2 px-8 py-4 bg-cyan-500/10 border border-cyan-500 rounded-lg hover:bg-cyan-500/20 transition-all duration-300"
@@ -116,7 +116,7 @@ function ExploreSpace() {
             </div>
           </div>
 
-          <div className="md:absolute md:bottom-20 left-0 right-0">
+          <div className="hidden md:block md:absolute md:bottom-20 left-0 right-0">
             <div className="max-w-6xl mx-auto px-6">
               <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0">
                 {['TODAY', 'NEAR - TERM', 'MID - TERM', 'FUTURE', 'HORIZON'].map((phase, idx) => (
@@ -358,10 +358,10 @@ function ExploreSpace() {
                 <Rocket className="w-5 h-5" />
                 <span className="font-medium">Register Interest</span>
               </button>
-              <button className="group flex items-center gap-2 px-8 py-4 bg-cyan-500/10 border border-cyan-500 rounded-lg hover:bg-cyan-500/20 transition-all duration-300">
-                <Download className="w-5 h-5" />
-                <span className="font-medium">Download Roadmap</span>
-              </button>
+              <a href="https://www.linkedin.com/company/wipe-technologies/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-8 py-4 bg-cyan-500/10 border border-cyan-500 rounded-lg hover:bg-cyan-500/20 transition-all duration-300">
+                <UserRoundPlus className="w-5 h-5" />
+                <span className="font-medium">Follow our Journey</span>
+              </a>
             </div>
           </div>
         </section>

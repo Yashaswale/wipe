@@ -39,8 +39,15 @@ const Footer = () => {
                 className="inline-flex items-center bg-green-600 hover:bg-emerald-700 text-white px-3 py-2 rounded-full transition-colors duration-200 group"
                 aria-label="Connect with us on LinkedIn"
               >
-                <Linkedin className="w-5 h-5 mr-2 text-white" />
-                <span className="font-medium">LinkedIn</span>
+                <Linkedin className="w-5 h-5 text-white" />
+                
+              </a>
+              <a 
+                href="https://www.instagram.com/letswipe.io?igsh=MTJ3anZjdnV3Zjh5cQ==" 
+                className="inline-flex items-center bg-green-600 hover:bg-emerald-700 text-white px-3 py-2 rounded-full transition-colors duration-200 group"
+                aria-label="Connect with us on LinkedIn"
+              >
+                <Instagram className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>

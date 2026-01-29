@@ -23,9 +23,9 @@ export function World() {
                 for how  <span className="text-indigo-800">humanity</span><br />
                 moves next
               </h2>
-              <button onClick={() => navigate('/explore-space')} className="mt-6 sm:mt-8 bg-neutral-800 hover:bg-gray-700 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-colors duration-300 inline-flex flex-col items-center max-w-fit">
-                <span>Explore  O R B I T&nbsp;&nbsp;N I N E</span>
-                <span className="text-xs mt-0.5">Powered by Wipe</span>
+              <button onClick={() => navigate('/explore-space')} className="mt-6 sm:mt-8 bg-gradient-to-r from-purple-900 via-blue-600 to-cyan-400 hover:from-purple-800 hover:via-blue-500 hover:to-cyan-300 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-300 inline-flex flex-col items-center max-w-fit shadow-lg hover:shadow-cyan-500/50">
+                <span className="text-lg">Explore&nbsp;&nbsp;  O R B I T&nbsp;&nbsp;&nbsp;N I N E</span>
+                {/* <span className="text-xs mt-0.5">Powered by Wipe</span> */}
               </button>
             </div>
           </div>
