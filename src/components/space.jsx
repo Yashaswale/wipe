@@ -6,7 +6,32 @@ function ExploreSpace() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true);
+    // preload important images used on this page and only then show content
+    const assets = [
+      '/assets/space/BG.png',
+      '/assets/space/img1.png',
+      '/assets/space/img2.png',
+      '/assets/space/img3.png',
+      '/assets/space/img4.png',
+      '/assets/space/img5.png',
+      '/assets/space/img6.png',
+      '/assets/space/space2.jpg'
+    ];
+
+    let loaded = 0;
+    if (assets.length === 0) setIsLoaded(true);
+
+    assets.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = img.onerror = () => {
+        loaded += 1;
+        if (loaded === assets.length) {
+          // small delay for smoothness
+          setTimeout(() => setIsLoaded(true), 300);
+        }
+      };
+    });
   }, []);
 
   useEffect(() => {
@@ -33,13 +58,36 @@ function ExploreSpace() {
       />
 
       <div className="relative z-10">
-        <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20">
+        {!isLoaded && (
+          <div className="fixed inset-0 z-50 bg-slate-900 flex items-center justify-center">
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 border-4 border-t-transparent border-cyan-400 rounded-full animate-spin mb-4" />
+              <div className="text-sm text-gray-200">Loading space content…</div>
+            </div>
+          </div>
+        )}
+
+        {/* Orbit Nine Section - centered and section-like */}
+        <section className="py-72 md:py-72   px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold tracking-widest text-white mb-4" style={{ fontFamily: 'Codec Cold Trial, sans-serif' }}>
+              O R B I T&nbsp;&nbsp;&nbsp;N I N E
+            </h2>
+            <div className="mt-4">
+              <span className="inline-block text-sm sm:text-base md:text-lg font-medium text-white px-4 py-2 bg-white/6 rounded-full backdrop-blur-sm border border-cyan-500/30">
+                Powered by Wipe
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section className="min-h-screen flex flex-col items-center justify-center px-6 pb-20">
           <div className="max-w-6xl mx-auto text-center space-y-8 flex-1 flex flex-col justify-center">
             <p className="text-cyan-400 text-sm tracking-widest uppercase font-light">
               Pioneering the Future of Space Tourism
             </p>
 
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-8xl font-bold tracking-tight leading-tight">
               SPACE TOURISM
               <br />
               <span className="text-cyan-400">ROADMAP</span>
@@ -68,14 +116,15 @@ function ExploreSpace() {
             </div>
           </div>
 
-          <div className="absolute bottom-20 left-0 right-0">
+          <div className="md:absolute md:bottom-20 left-0 right-0">
             <div className="max-w-6xl mx-auto px-6">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0">
                 {['TODAY', 'NEAR - TERM', 'MID - TERM', 'FUTURE', 'HORIZON'].map((phase, idx) => (
-                  <div key={phase} className="flex flex-col items-center gap-3 flex-1">
+                  <div key={phase} className="flex flex-col items-center gap-3 md:flex-1">
                     <div className={`w-4 h-4 rounded-full ${idx === 0 ? 'bg-cyan-400' : 'bg-gray-600'} relative`}>
                       {idx < 4 && (
-                        <div className="absolute left-full top-1/2 w-screen h-px bg-gradient-to-r from-gray-600 to-transparent -translate-y-1/2" />
+                        // show horizontal connector only on md+ screens
+                        <div className="hidden md:block absolute left-full top-1/2 w-full md:w-[200%] h-px bg-gradient-to-r from-gray-600 to-transparent -translate-y-1/2" />
                       )}
                     </div>
                     <span className={`text-xs tracking-wider ${idx === 0 ? 'text-cyan-400' : 'text-gray-500'} font-medium`}>
@@ -91,7 +140,7 @@ function ExploreSpace() {
         <section className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center space-y-4 mb-16">
-              <h2 className="text-5xl font-bold">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
                 Evolution of <span className="text-cyan-400">Space Tourism</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -241,22 +290,7 @@ function ExploreSpace() {
               ))}
             </div>
 
-            {/* Orbit Nine Section */}
-            <div className="mt-24 text-center space-y-4">
-              <div>
-                <h2
-                  className="text-4xl md:text-5xl font-bold text-white px-8 py-4 rounded-2xl inline-block"
-                  style={{ fontFamily: 'Codec Cold Trial, sans-serif' }}
-                >
-                  O R B I T&nbsp;&nbsp;&nbsp;N I N E
-                </h2>
-              </div>
-              <div>
-                <p className="text-lg md:text-xl font-semibold text-white px-6 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-cyan-500/30 inline-block">
-                  Powered by Wipe
-                </p>
-              </div>
-            </div>
+         
           </div>
         </section>
 
@@ -306,7 +340,7 @@ function ExploreSpace() {
 
         <section className="py-32 px-6">
           <div className="max-w-5xl mx-auto text-center space-y-10">
-            <h2 className="text-6xl md:text-7xl font-bold leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-7xl font-bold leading-tight">
               THE JOURNEY BEYOND
               <br />
               <span className="text-cyan-400">EARTH HAS BEGUN</span>
@@ -334,29 +368,29 @@ function ExploreSpace() {
 
         <footer className="py-12 px-6 border-t border-slate-800">
           <div className="max-w-6xl mx-auto text-center text-gray-500 text-sm">
-            <p>&copy; 2026 Space Tourism Initiative. All rights reserved.</p>
+            <p>&copy; 2026 - ORBIT NINE Wipe Technologies Space Tourism Initiative. All rights reserved.</p>
           </div>
         </footer>
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-6 overflow-y-auto pt-8">
-          <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 border border-cyan-500/30 rounded-2xl max-w-2xl w-full p-8 my-16">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 sm:p-6 overflow-y-auto pt-6">
+          <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 border border-cyan-500/30 rounded-2xl w-full max-w-lg md:max-w-2xl p-4 sm:p-8 my-6 sm:my-12 max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-30"
             >
               <X className="w-6 h-6" />
             </button>
 
             <div className="space-y-6">
               <div className="text-center space-y-2">
-                <h3 className="text-4xl font-bold text-cyan-400">REGISTER YOUR INTEREST</h3>
-                <p className="text-gray-400">Join the next generation of space explores</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-cyan-400">REGISTER YOUR INTEREST</h3>
+                <p className="text-gray-400">Join the next generation of space explorers</p>
               </div>
 
               <form className="space-y-5">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">First Name*</label>
                     <input
@@ -403,8 +437,8 @@ function ExploreSpace() {
                   </select>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="col-span-1">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
                     <label className="block text-sm font-medium mb-2">City*</label>
                     <input
                       type="text"
@@ -412,15 +446,15 @@ function ExploreSpace() {
                       className="w-full px-4 py-3 bg-slate-950/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors"
                     />
                   </div>
-                  <div className="col-span-1">
-                    <label className="block text-sm font-medium mb-2">State/Provide*</label>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">State/Province*</label>
                     <input
                       type="text"
                       placeholder="NY"
                       className="w-full px-4 py-3 bg-slate-950/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none transition-colors"
                     />
                   </div>
-                  <div className="col-span-1">
+                  <div>
                     <label className="block text-sm font-medium mb-2">Zip/Postal Code*</label>
                     <input
                       type="text"
@@ -460,7 +494,7 @@ function ExploreSpace() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition-colors duration-300"
+                  className="w-full py-3 sm:py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition-colors duration-300"
                 >
                   Submit Registration
                 </button>

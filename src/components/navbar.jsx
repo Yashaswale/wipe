@@ -103,11 +103,17 @@ export function Navbar() {
             onClick={handleExploreSpace}
             className="hover:text-green-600 transition-colors tracking-widest"
           >
-            O R B I T  N I N E
+            O R B I T&nbsp;&nbsp;N I N E
           </button>
           <button
             onClick={handleExploreSpace}
-            className="px-6 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-lg hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
+            className="px-6 py-2 text-white font-semibold rounded-full transition-all shadow-lg text-sm relative overflow-hidden"
+            style={{
+              fontFamily: "Codec Cold Trial, sans-serif",
+              backgroundImage: ' url(/assets/space/space2.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
           >
             Explore Space
           </button>

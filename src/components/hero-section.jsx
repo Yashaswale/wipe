@@ -75,6 +75,7 @@ const WipeLanding = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSplash, setShowSplash] = useState(true);
   const [splashSlideUp, setSplashSlideUp] = useState(false);
+  const [splashImageLoaded, setSplashImageLoaded] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -132,10 +133,20 @@ const WipeLanding = () => {
             transitionDuration: '1000ms',
           }}
         >
+          {!splashImageLoaded && (
+            <div className="absolute inset-0 z-40 flex items-center justify-center">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 border-4 border-t-transparent border-cyan-400 rounded-full animate-spin mb-4" />
+                <div className="text-sm text-gray-700">Loading…</div>
+              </div>
+            </div>
+          )}
+
           <img
             src="/assets/Wipe.png"
             alt="Wipe Logo"
             className="w-full h-full object-cover"
+            onLoad={() => setSplashImageLoaded(true)}
           />
         </div>
       )}
@@ -285,14 +296,16 @@ const WipeLanding = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-lg z-50 flex items-center justify-center p-6">
-          <div className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '300px' }}>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-lg z-50 flex items-start sm:items-center justify-center p-4 sm:p-6">
+          <div className="relative w-full max-w-full sm:max-w-3xl md:max-w-4xl rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '260px' }}>
             {/* Video Background */}
             <video
               autoPlay
               muted
               loop
-              className="absolute inset-0 w-full h-full object-cover"
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             >
               <source src="/assets/space_vid.mp4" type="video/mp4" />
             </video>
@@ -301,9 +314,9 @@ const WipeLanding = () => {
             {/* <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/70 to-blue-900/70"></div> */}
 
             {/* Content Container */}
-            <div className="relative z-10 flex items-center justify-between p-8 md:p-16">
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 sm:p-16">
               {/* Left Text Content */}
-              <div className="flex-1 pr-8">
+              <div className="flex-1 sm:pr-8 mb-6 sm:mb-0">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight" style={{ fontFamily: "Codec Cold Trial, sans-serif" }}>
                   Explore worlds first and only mobility ecosystem connecting <span className="text-cyan-200">Earth & Space!</span>
                 </h2>
@@ -316,7 +329,7 @@ const WipeLanding = () => {
                     setShowModal(false);
                     navigate('/explore-space');
                   }}
-                  className="px-12 py-5 bg-white text-blue-600 font-bold text-lg rounded-full hover:bg-cyan-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="px-10 py-4 sm:px-12 sm:py-5 bg-white text-blue-600 font-bold text-lg rounded-full hover:bg-cyan-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                   style={{ fontFamily: "Codec Cold Trial, sans-serif" }}
                 >
                   Explore Now
