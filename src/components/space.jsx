@@ -3,6 +3,11 @@ import { Compass, Rocket, Users, Layers, Download, X } from 'lucide-react';
 
 function ExploreSpace() {
   const [showModal, setShowModal] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   useEffect(() => {
     if (showModal) {
@@ -17,7 +22,7 @@ function ExploreSpace() {
   }, [showModal]);
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden relative">
+    <div className={`min-h-screen text-white overflow-x-hidden relative transition-opacity duration-1000 font-[Codec Cold Trial,sans-serif] ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
@@ -31,7 +36,7 @@ function ExploreSpace() {
         <section className="min-h-screen flex flex-col items-center justify-center px-6 py-20">
           <div className="max-w-6xl mx-auto text-center space-y-8 flex-1 flex flex-col justify-center">
             <p className="text-cyan-400 text-sm tracking-widest uppercase font-light">
-              Pioneering the Future
+              Pioneering the Future of Space Tourism
             </p>
 
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
@@ -41,12 +46,11 @@ function ExploreSpace() {
             </h1>
 
             <p className="text-2xl font-light text-gray-300 max-w-3xl mx-auto">
-              From Near-Space Experiences to Lunar Living
+              From Near Space to Lunar living & Beyond
             </p>
 
             <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Explore the phased evolution of commercial space travel — engineered for safety, scalability,
-              and long-term human presence beyond Earth.
+              Experience phased evolution of commercial space travel with ORBIT NINE powered by Wipe. Engineered for future human presence beyond earth.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center pt-6">
@@ -235,6 +239,23 @@ function ExploreSpace() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Orbit Nine Section */}
+            <div className="mt-24 text-center space-y-4">
+              <div>
+                <h2
+                  className="text-4xl md:text-5xl font-bold text-white px-8 py-4 rounded-2xl inline-block"
+                  style={{ fontFamily: 'Codec Cold Trial, sans-serif' }}
+                >
+                  O R B I T&nbsp;&nbsp;&nbsp;N I N E
+                </h2>
+              </div>
+              <div>
+                <p className="text-lg md:text-xl font-semibold text-white px-6 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-cyan-500/30 inline-block">
+                  Powered by Wipe
+                </p>
+              </div>
             </div>
           </div>
         </section>

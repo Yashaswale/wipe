@@ -5,6 +5,31 @@ import { Headset, DollarSign, Languages} from 'lucide-react';
 export function World() {
   return (
     <>
+
+    <div className="py-16 px-4 sm:px-6 md:px-10 lg:px-28" style={{ backgroundColor: "#DBF1E6" }}>
+          <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 lg:p-12 relative overflow-hidden min-h-[260px] sm:min-h-[300px] lg:min-h-[320px]">
+            <div className="absolute inset-0">
+              <img 
+                src="/assets/space/space1.jpg" 
+                alt="Forest aerial view" 
+                className="w-full h-full object-cover opacity-60"
+              />
+            </div>
+            <div className="relative z-10 max-w-3xl">
+              <h2 className="text-white text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+                Building seamless Infrastructure <br />
+                for how  <span className="text-indigo-800">humanity</span><br />
+                moves next
+              </h2>
+              <a href="https://letswipe.mozio.com/en-us/" className="mt-6 sm:mt-8 bg-neutral-800 hover:bg-gray-700 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-colors duration-300 inline-flex flex-col items-center max-w-fit">
+                <span>Explore  O R B I T&nbsp;&nbsp;N I N E</span>
+                <span className="text-xs mt-0.5">Powered by Wipe</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
       <div className="py-16 px-0" style={{ backgroundColor: "#DBF1E6" }}>
         <div className="w-full">
           {/* Header */}

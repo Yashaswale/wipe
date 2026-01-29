@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Globe, Plane, Building } from 'lucide-react';
 import Select from 'react-select';
 import { getNames } from 'country-list';
@@ -6,7 +7,8 @@ import { getNames } from 'country-list';
 const textVariations = [
   "Seamless Rides, Anytime, Anywhere",
   "Ride Globally, Arrive in Style",
-  "Wherever You Go, We're Already There."
+  "Wherever You Go, We're Already There.",
+  "From Roads to Orbit Earth to Space",
 ];
 
 const leftColumnImages = [
@@ -70,6 +72,26 @@ const WipeLanding = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
+  const [splashSlideUp, setSplashSlideUp] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const splashTimer = setTimeout(() => {
+      setSplashSlideUp(true);
+    }, 5000);
+
+    const modalTimer = setTimeout(() => {
+      setShowSplash(false);
+      setShowModal(true);
+    }, 10000);
+
+    return () => {
+      clearTimeout(splashTimer);
+      clearTimeout(modalTimer);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,7 +112,7 @@ const WipeLanding = () => {
       }`}
     >
       <span
-        className={word === "Seamless" || word === "Globally," || word === "Already" ? "text-green-600" : ""}
+        className={word === "Seamless" || word === "Globally," || word === "Already" || word === "Space" || word === "Earth" ? "text-green-600" : ""}
       >
         {word}{" "}
       </span>
@@ -98,7 +120,26 @@ const WipeLanding = () => {
   ));
 
   return (
-    <div className="min-h-screen" style={{ background: "linear-gradient(to top left, #DBF1E6, white)" }}>
+    <div className="min-h-screen " style={{ background: "linear-gradient(to top left, #DBF1E6, white)" }}>
+      {/* Splash Screen */}
+      {showSplash && (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-all duration-1000 ${
+            splashSlideUp ? '-translate-y-full' : 'translate-y-0'
+          }`}
+          style={{
+            transitionProperty: 'transform',
+            transitionDuration: '1000ms',
+          }}
+        >
+          <img
+            src="/assets/Wipe.png"
+            alt="Wipe Logo"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
       <div className="flex flex-col lg:flex-row min-h-[calc(100vh-80px)]">
         {/* Left Content */}
         <div className="flex-1 px-6 py-20 md:px-12 lg:pr-8">
@@ -169,6 +210,18 @@ const WipeLanding = () => {
               >
                 Lets Ride
               </button>
+              <button
+                onClick={() => navigate('/explore-space')}
+                className="px-8 py-4 text-white font-semibold rounded-full transition-all shadow-lg text-lg relative overflow-hidden group"
+                style={{
+                  fontFamily: "Codec Cold Trial, sans-serif",
+                  backgroundImage: 'url(/assets/space/space2.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <span className="relative z-10">Explore Space</span>
+              </button>
             </div>
 
             {/* Stats Cards */}
@@ -229,6 +282,60 @@ const WipeLanding = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-lg z-50 flex items-center justify-center p-6">
+          <div className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '300px' }}>
+            {/* Video Background */}
+            <video
+              autoPlay
+              muted
+              loop
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/assets/space_vid.mp4" type="video/mp4" />
+            </video>
+
+            {/* Gradient Overlay */}
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/70 to-blue-900/70"></div> */}
+
+            {/* Content Container */}
+            <div className="relative z-10 flex items-center justify-between p-8 md:p-16">
+              {/* Left Text Content */}
+              <div className="flex-1 pr-8">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight" style={{ fontFamily: "Codec Cold Trial, sans-serif" }}>
+                  Explore worlds first and only mobility ecosystem connecting <span className="text-cyan-200">Earth & Space!</span>
+                </h2>
+              </div>
+
+              {/* Right Button */}
+              <div className="flex-shrink-0">
+                <button
+                  onClick={() => {
+                    setShowModal(false);
+                    navigate('/explore-space');
+                  }}
+                  className="px-12 py-5 bg-white text-blue-600 font-bold text-lg rounded-full hover:bg-cyan-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  style={{ fontFamily: "Codec Cold Trial, sans-serif" }}
+                >
+                  Explore Now
+                </button>
+              </div>
+            </div>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm z-20"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
